@@ -29,13 +29,17 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#"">contacto</a>
+                    <a class="nav-link" href="#">contacto</a>
                     </li>
                     <li class="nav-item nav-icon">
                     <a id="iconSearch" class="nav-link" href="#"><img src="./media/icons/search.svg" alt="Buscar"/></a>
                     </li>
-                    <li class="nav-item nav-icon">
+                    <li id="parentDropdown" class="nav-item nav-icon">
                     <a id="iconCart" class="nav-link" href="#"><img src="./media/icons/cart.svg" alt="Mi carrito"/></a>
+                        <ul id="dropdownCart" style="display: none;">
+                            <!-- inserts js -->
+                            <li id="cartPage">Confirmar compra</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -51,7 +55,7 @@
     </section>  
 
     <!-- Sección menu - JavaScript -->
-    <section id="visualiceMenu">
+    <section id="visualiceMenu" style="display: none;">
         <div id="menuCategories"></div>
         <div id="menuCards"></div>
     </section>

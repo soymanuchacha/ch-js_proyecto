@@ -75,17 +75,5 @@
         "Porciones": 3,
         "Peso": 0,
         "Pasos": {"Primer": "Blinis con gravlax de salmón y crema", "Segundo": "Paella de mariscos", "Tercer": "Volcán de chocolate"}
-    },
-    {
-        "id": 8,
-        "category": "Regalo",
-        "name": "Regalá la experiencia Virazon",
-        "price": 0,
-        "stock": 20,
-        "description": "Ingresá la experiencia que quieras dar, te aseguramos que será el mejor regalo",
-        "Porciones": 1,
-        "Peso": 0,
-        "Pasos": {}
     }
-    
 ]

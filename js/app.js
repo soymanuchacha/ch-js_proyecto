@@ -1,6 +1,11 @@
 // definición de variables
-var URLJSON = "../data/menu.JSON";
+const URLJSON = "../data/menu.JSON";
+const MiCarrito = [];
+let itemAgregado;
+let registroCarrito = [];
+const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)};
 
+//initialice
 obtenerDatosJson();
 
 function obtenerDatosJson() {
@@ -12,7 +17,6 @@ function obtenerDatosJson() {
         }
     });
 }
-
 function loadCards(misProductos) {
     for(let i = 0; i < misProductos.length; i++) {
         const producto = misProductos[i];
@@ -32,15 +36,31 @@ function loadCards(misProductos) {
                             </div>`)
     }
 }
-
-
 function SumarCarrito(i) {
-    //armas el item en base a lo que tengas de i
-    let itemSeleccionado = {
+    // info producto
+    itemAgregado = {
         nombre: $(`#nombre${i}`).text().trim(),
         cantidad: parseInt($(`#QuantityProd${i}`).val()),
         precio: parseInt($(`#precio${i}`).text().replace('$', '')) * parseInt($(`#QuantityProd${i}`).val())
-        // aca tendrias que poner cantidad asumo y eso
     }
-    console.log(itemSeleccionado);
+    
+    $("#dropdownCart").prepend(`<li>
+                                <h4>${itemAgregado.nombre}</h4>
+                                <div class="flexP">
+                                <p class="pDropdown">${itemAgregado.cantidad} x <b>$${itemAgregado.precio}</b></p>
+                                <img src="../media/icons/bin.svg" alt="Eliminar items"/></div>
+                                </li>`)
+    MiCarrito.push(itemAgregado);
+    guardarLocal("listaCarrito", JSON.stringify(MiCarrito));
 }
+
+// funcionamiento carrito
+$("#iconCart").on("click", () => {
+    $("#dropdownCart").toggle();
+})
+$(".btnPrimary").on("click", () => {
+    $("#visualiceMenu").toggle();
+})
+
+
+
