@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "category": "Postres",
+        "name": "Pavlova de frutos rojos",
+        "price": 1000,
+        "stock": 30,
+        "description": "Torta de vainilla con frutos rojos de estación y merengue",
+        "Porciones": 10,
+        "Peso": 900,
+        "Pasos": {}
+    },
+    {
+        "id": 2,
+        "category": "Postres",
+        "name": "Pavlova de maracuya",
+        "price": 1500,
+        "stock": 15,
+        "description": "Torta de vainilla clemon curd con pulpa de maracuya",
+        "Porciones": 10,
+        "Peso": 1100,
+        "Pasos": {}
+    },
+    {
+        "id": 3,
+        "category": "Postres",
+        "name": "Brownie con dulce de leche",
+        "price": 2000,
+        "stock": 50,
+        "description": "Torta brownie con dulce de leche, almendras, chocolate y merengue",
+        "Porciones": 8,
+        "Peso": 1500,
+        "Pasos": {}
+    },
+    {
+        "id": 4,
+        "category": "Postres",
+        "name": "Lemon Pie",
+        "price": 800,
+        "stock": 40,
+        "description": "Una tarta exquisita, fresca y cremosa, con merengue italiano",
+        "Porciones": 6,
+        "Peso": 700,
+        "Pasos": {}
+    },
+    {
+        "id": 5,
+        "category": "Postres",
+        "name": "Tarta de banana",
+        "price": 1200,
+        "stock": 20,
+        "description": "Tarta de banana, coco, avena y almendras.",
+        "Porciones": 10,
+        "Peso": 1000,
+        "Pasos": {}
+    },
+    {
+        "id": 6,
+        "category": "Experiencias",
+        "name": "Experiencia mediterránea",
+        "price": 3500,
+        "stock": 10,
+        "description": "Las pastas caseras son nuestra especialidad, al igual que los mariscos. Juntos, son una experiencia única.",
+        "Porciones": 3,
+        "Peso": 0,
+        "Pasos": {"Primer": "Quiché de espinaca con ensalada", "Segundo": "Macarrones con mejillones", "Tercer": "Mouse de choco blanco"}
+    },
+    {
+        "id": 7,
+        "category": "Experiencias",
+        "name": "Experiencia de mar y de tierra",
+        "price": 5000,
+        "stock": 10,
+        "description": "Una mezcla de sabores que une lo mejor del mar con ingredientes de tierra.",
+        "Porciones": 3,
+        "Peso": 0,
+        "Pasos": {"Primer": "Blinis con gravlax de salmón y crema", "Segundo": "Paella de mariscos", "Tercer": "Volcán de chocolate"}
+    },
+    {
+        "id": 8,
+        "category": "Regalo",
+        "name": "Regalá la experiencia Virazon",
+        "price": 0,
+        "stock": 20,
+        "description": "Ingresá la experiencia que quieras dar, te aseguramos que será el mejor regalo",
+        "Porciones": 1,
+        "Peso": 0,
+        "Pasos": {}
+    }
+    
+]

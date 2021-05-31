@@ -1,0 +1,226 @@
+/* variables */
+:root {
+    /* color */
+    --color-blue: #3B6287;
+    --color-orange: #E77D42;
+    --color-yellow: #F3D676;
+    --color-black: #2D363F;
+    --color-green: #67B2A8;
+    --shadow: 0px 10px 20px rgba(231, 125, 66, .6);
+    /* position */
+    --z-normal: 1;
+    --z-modal: 100;
+    --z-super: 200;
+}
+
+/* inicializar */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;   
+    box-sizing: border-box;
+}
+
+/* Header */
+.navbar {
+    background-color: white;
+    padding-right: 4em;
+    padding-left: 4em;
+    border-bottom: 2px solid #E77D42;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-modal);
+}
+.navbar-brand {
+    width: 3em;
+    height: auto;
+}
+.nav-link {
+    color: var(--color-black);
+    font-weight: 700;
+}
+#iconSearch img, #iconCart img {
+    width: 1.1em;
+    height: auto;
+}
+#navbarSupportedContent {
+    padding-left: 45%;
+}
+.nav-item {
+    padding-left: 3em;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-blue);
+    padding: 2em 5em;
+    display: flex;
+}
+.footer div {
+    width: 25%;
+    padding: 0 1em;
+}
+.footer-logo img {
+    width: 50%;
+    height: auto;
+}
+.footer-title {
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+}
+ul {
+    padding-left: 0;
+}
+li {
+    list-style-type: none;
+    margin-left: 0;
+}
+.footer-pages-nav_item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: val(--p-footer);
+}
+.footer-social-nav_item {
+    display: inline-block;
+    padding-right: 2em;
+}
+.footer-social-nav_item img {
+    width: 1.8em;
+    height: auto;
+}
+.footer-newsletter {
+    position: relative;
+}
+#iptNews {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    margin-top: .5em;
+    padding: .6em;
+}
+#btnNews {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    border: none;
+    border-radius: 50%;
+    padding: .5em;
+    font-size: .8em;
+    background-color: #3B6287;
+    color: white;
+}
+
+/* Index */
+.titleVirazon {
+    color: var(--color-orange);
+    font-family: serif;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 1.5em;
+}
+h1 {
+    color: var(--color-black);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8em;
+    line-height: 1em;
+    font-weight: 900;
+}
+.bannerPrincipal {
+    position: relative;
+    /*background-color: var(--color-yellow);*/
+    padding-bottom: 2em;
+    
+}
+.titlePhoto {
+    width: 20%;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+.btnPrimary {
+    background-color: var(--color-blue);
+    color: white;
+    font-weight: 700;
+    margin: 2em auto;
+    text-align: center;
+    width: 15%;
+    padding: .4em 0;
+    border-radius: 20px;
+}
+.seccionQuedate {
+    background-color: var(--color-yellow);
+    padding: 2em 6em;
+    margin-top: 3em;
+}
+.seccionQuedateFlex {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2.6em;
+}
+.seccionQuedateItem-img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 1em;
+    width: 6rem;
+    height: auto;
+}
+.seccionQuedateItem p {
+    text-align: center;
+    padding-top: .7em;
+}
+h2 {
+    color: var(--color-orange);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* js cards */
+.eachCard {
+    width: 70%;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+    margin: 2em auto;
+    display: flex;
+    align-items: center;
+    padding: 2em;
+}
+.cardsImg {
+    width: 20%;
+}
+.cardsImg img {
+    width: 90%;
+    height: auto;
+}
+.cardsInfo {
+    padding-left: 3em;
+    width: 70%;
+}
+h3 {
+    font-weight: 700;
+    color: var(--color-orange);
+}
+.cardsBuy {
+    padding-top: .8em;
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+}
+.buyingPrice p {
+    font-weight: 700;
+    color: var(--color-blue);
+}
+.buyingAction {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+.buyingAction img {
+    width: 2em;
+    height: auto;
+}
