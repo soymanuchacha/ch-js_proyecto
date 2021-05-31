@@ -22,32 +22,19 @@
 }
 
 /* Header */
-.navbar {
-    background-color: white;
-    padding-right: 4em;
-    padding-left: 4em;
-    border-bottom: 2px solid #E77D42;
+#header {
     position: sticky;
-    top: 0;
-    z-index: var(--z-modal);
+    top: 0%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 7em;
+    height: 4em;
+    z-index: var(--z-normal);
 }
-.navbar-brand {
-    width: 3em;
-    height: auto;
-}
-.nav-link {
-    color: var(--color-black);
-    font-weight: 700;
-}
-#iconSearch img, #iconCart img {
-    width: 1.1em;
-    height: auto;
-}
-#navbarSupportedContent {
-    padding-left: 45%;
-}
-.nav-item {
-    padding-left: 3em;
+
+#headerLogo img, #iconCart img {
+    width: auto;
+    height: 2.2em;
 }
 
 /* Footer */
@@ -151,6 +138,7 @@ h1 {
     width: 15%;
     padding: .4em 0;
     border-radius: 20px;
+    cursor: pointer;
 }
 .seccionQuedate {
     background-color: var(--color-yellow);
@@ -237,7 +225,8 @@ h3 {
     background-color: white;
     border-radius: 20px;
     box-shadow: var(--shadow);
-    right: 0;
+    right: 6em;
+    top: 4em
 }
 h4 {
     font-size: 1em;
@@ -250,14 +239,15 @@ h4 {
     justify-content: flex-start;
     align-items: baseline;
     width: 80%;
+    padding-bottom: .6em;
 }
 .pDropdown {
     font-size: .8em;
     padding-right: 2em;
 }
-.flexP img {
-    width: 1em;
-    height: auto;
+#iconCart .dropdownBin {
+    height: 1.2em;
+    width: auto;
 }
 #cartPage {
     width: 70%;
@@ -268,4 +258,11 @@ h4 {
     text-align: center;
     padding: .3em;
     border-radius: 20px;
+}
+#cuantosItems {
+    background-color: #3B6287;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: var(--z-modal);
 }

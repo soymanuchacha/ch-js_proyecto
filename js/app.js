@@ -29,7 +29,7 @@ function loadCards(misProductos) {
                                         <div class="buyingPrice"><p id="precio${i}">$${producto.price}</p></div>
                                         <div class="buyingAction">
                                             <input value="1" type="number" id="QuantityProd${i}" name="cuantosProductos" min="1" max="${producto.stock}"/>
-                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito"/>
+                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito" style="cursor: pointer;"/>
                                         </div>
                                     </div>
                                 </div>
@@ -48,10 +48,11 @@ function SumarCarrito(i) {
                                 <h4>${itemAgregado.nombre}</h4>
                                 <div class="flexP">
                                 <p class="pDropdown">${itemAgregado.cantidad} x <b>$${itemAgregado.precio}</b></p>
-                                <img src="../media/icons/bin.svg" alt="Eliminar items"/></div>
+                                <img class="dropdownBin" src="../media/icons/bin.svg" alt="Eliminar items" style="cursor: pointer;"/></div>
                                 </li>`)
     MiCarrito.push(itemAgregado);
     guardarLocal("listaCarrito", JSON.stringify(MiCarrito));
+
 }
 
 // funcionamiento carrito
@@ -59,8 +60,12 @@ $("#iconCart").on("click", () => {
     $("#dropdownCart").toggle();
 })
 $(".btnPrimary").on("click", () => {
-    $("#visualiceMenu").toggle();
+    $("#visualiceMenu").slideToggle("slow");
 })
+
+
+
+
 
 
 
