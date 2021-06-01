@@ -38,24 +38,13 @@
 }
 
 /* Footer */
-.footer {
+#footer {
     background-color: var(--color-blue);
-    padding: 2em 5em;
-    display: flex;
+    padding: 1em 4em;
 }
-.footer div {
-    width: 25%;
-    padding: 0 1em;
-}
-.footer-logo img {
-    width: 50%;
-    height: auto;
-}
-.footer-title {
+#footer p {
     color: white;
-    font-weight: 400;
-    font-size: 1em;
-    padding-bottom: 1em;
+    text-align: center;
 }
 ul {
     padding-left: 0;
@@ -64,41 +53,6 @@ li {
     list-style-type: none;
     margin-left: 0;
     padding: .3em 0;
-}
-.footer-pages-nav_item a {
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-    font-size: val(--p-footer);
-}
-.footer-social-nav_item {
-    display: inline-block;
-    padding-right: 2em;
-}
-.footer-social-nav_item img {
-    width: 1.8em;
-    height: auto;
-}
-.footer-newsletter {
-    position: relative;
-}
-#iptNews {
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-    margin-top: 1em;
-    padding: .8em;
-}
-#btnNews {
-    position: absolute;
-    right: 10%;
-    top: 40%;
-    border: none;
-    border-radius: 50%;
-    padding: .5em;
-    font-size: .8em;
-    background-color: #3B6287;
-    color: white;
 }
 
 /* Index */
@@ -332,6 +286,7 @@ h4 {
 #shopCarrito {
     background-color: var(--color-orange);
     padding: 3em 0;
+    height: 80vh;
 }
 #shopCarrito h2 {
     color: white;
@@ -363,4 +318,11 @@ h4 {
     text-transform: uppercase;
     font-weight: 700;
     text-align: right;
+}
+#gracias p {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    width: 70%;
+    margin: 0 auto;
 }

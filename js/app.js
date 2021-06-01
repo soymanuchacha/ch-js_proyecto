@@ -163,7 +163,7 @@ $("#cartPage").on("click", () => {
     for(let i = 0; i < respaldoCarrito.length; i++) {
         const producto = respaldoCarrito[i];
         precioFinal += producto.precio;
-        $("#listaCompras").append(`<div class="respaldoDiv">
+        $("#listaCompras").append(`<div class="respaldoDiv" id="item${producto.nombre}">
         <h3 id="respaldoName">${producto.nombre}</h3>
         <p>Cantidad: ${producto.cantidad}</p>
         <p>Precio: ${producto.precio}</p>
@@ -173,7 +173,7 @@ $("#cartPage").on("click", () => {
     console.log(precioFinal);
     $("#listaCompras").append(`<div class="respaldoDiv">
     <p class="pTotal">Total a pagar: $${precioFinal}</p>
-    </div>`);   
+    </div>`); 
 })
 $("#confirmarCompra").on("click", () => {
     $("#hideCart").slideUp("fast", () => {
@@ -187,7 +187,18 @@ $("#confirmarCompra").on("click", () => {
 });
 
 // formulario compra
-
+$("#contactForm").submit(function(e) {
+    e.preventDefault();
+    let hijos = $(e.target).children();
+    if(hijos != "") {
+        // alert("Gracias por enviar el form");
+        $("#formInformation").slideUp("fast", () => {
+            $("#contactForm").slideUp("fast", () => {
+                $("#gracias").append(`<p>¡Muchas gracias por comprar en <b>Casa Virazon</b>!</p>`)
+            });
+        });
+    }
+});
 
 
 
