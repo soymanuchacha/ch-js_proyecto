@@ -63,6 +63,7 @@ ul {
 li {
     list-style-type: none;
     margin-left: 0;
+    padding: .3em 0;
 }
 .footer-pages-nav_item a {
     text-decoration: none;
@@ -334,5 +335,32 @@ h4 {
 }
 #shopCarrito h2 {
     color: white;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
+}
+
+.respaldoDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 60%;
+    background-color: white;
+    margin: 0 auto 2em auto;
+    padding: 1em 4em;
+}
+.respaldoDiv img {
+    width: 1em;
+    height: auto;
+}
+.respaldoDiv h3 {
+    width: 50%;
+    font-size: 1em;
+}
+.respaldoDiv p {
+    padding-right: 4em;
+    font-size: .8em;
+}
+.pTotal {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right;
 }

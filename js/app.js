@@ -3,6 +3,7 @@ const URLJSON = "../data/menu.JSON";
 const MiCarrito = [];
 let itemAgregado;
 const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)};
+let respaldoCarrito = [];
 
 let productosExperiencias = [];
 let productosPostres = [];
@@ -149,11 +150,30 @@ $("#cardsTodas").on("click", () => {
     }
 })
 
-// shopping
+// shopping page
 $("#cartPage").on("click", () => {
     $("#hidingStuff").slideUp("3000", () => {
         $("#shopCarrito").slideDown("7000");
     });
+
+    // traigo el carrito
+    const respaldoCarrito = JSON.parse(localStorage.getItem("listaCarrito"));
+    console.log(respaldoCarrito);
+    let precioFinal = 0;
+    for(let i = 0; i < respaldoCarrito.length; i++) {
+        const producto = respaldoCarrito[i];
+        precioFinal += producto.precio;
+        $("#listaCompras").append(`<div class="respaldoDiv">
+        <h3 id="respaldoName">${producto.nombre}</h3>
+        <p>Cantidad: ${producto.cantidad}</p>
+        <p>Precio: ${producto.precio}</p>
+        <img src="../media/icons/bin.svg" alt="Eliminar item"/>
+        </div>`);
+    }
+    console.log(precioFinal);
+    $("#listaCompras").append(`<div class="respaldoDiv">
+    <p class="pTotal">Total a pagar: $${precioFinal}</p>
+    </div>`);   
 })
 $("#confirmarCompra").on("click", () => {
     $("#hideCart").slideUp("fast", () => {
@@ -164,8 +184,9 @@ $("#confirmarCompra").on("click", () => {
             });
         });
     });
+});
 
-    });
+// formulario compra
 
 
 
