@@ -55,6 +55,7 @@
     color: white;
     font-weight: 400;
     font-size: 1em;
+    padding-bottom: 1em;
 }
 ul {
     padding-left: 0;
@@ -84,13 +85,13 @@ li {
     width: 100%;
     border: none;
     border-radius: 20px;
-    margin-top: .5em;
-    padding: .6em;
+    margin-top: 1em;
+    padding: .8em;
 }
 #btnNews {
     position: absolute;
     right: 10%;
-    top: 30%;
+    top: 40%;
     border: none;
     border-radius: 50%;
     padding: .5em;
@@ -107,6 +108,7 @@ li {
     text-align: center;
     text-transform: uppercase;
     padding-top: 1.5em;
+    padding-bottom: 1.2em;
 }
 h1 {
     color: var(--color-black);
@@ -265,4 +267,72 @@ h4 {
     top: 0;
     right: 0;
     z-index: var(--z-modal);
+}
+
+/* menu categories */
+#menuCategories {
+    background-color: var(--color-yellow); 
+    text-align: center;  
+}
+#menuCategories li{
+    display: inline-block;
+    padding: .6em 1.5em;
+    color: var(--color-blue);
+}
+#menuCategories li:hover{
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#confirmarCompra {
+    width: 15%;
+    background-color: white;
+    color: var(--color-orange);
+    margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
+    padding: .3em;
+    border-radius: 20px;
+}
+#contactForm {
+    width: 50%;
+    margin: 0 auto;
+}
+#fNombre, #fEmail {
+    width: 100%;
+    padding: 1em;
+    border-radius: 20px;
+    margin: .8em 0 2em 0;
+    border: none;
+}
+.formLabel {
+    width: 100%;
+    font-weight: 300;
+    color: white;
+}
+#formSubmit {
+    width: 15%;
+    background-color: white;
+    color: var(--color-orange);
+    margin: 1em auto;
+    font-weight: 700;
+    text-align: center;
+    padding: .3em;
+    border-radius: 20px;
+    border: none;
+    margin-left: 40%;
+    margin-bottom: 3em;
+}
+#formInformation p {
+    text-align: center;
+    padding: 2em 0;
+    color: white;
+}
+#shopCarrito {
+    background-color: var(--color-orange);
+    padding: 3em 0;
+}
+#shopCarrito h2 {
+    color: white;
+    padding-bottom: 2em;
 }

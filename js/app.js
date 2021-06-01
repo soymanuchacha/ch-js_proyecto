@@ -2,12 +2,15 @@
 const URLJSON = "../data/menu.JSON";
 const MiCarrito = [];
 let itemAgregado;
-let registroCarrito = [];
 const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)};
+
+let productosExperiencias = [];
+let productosPostres = [];
 
 //initialice
 obtenerDatosJson();
 
+// cards
 function obtenerDatosJson() {
     $.getJSON(URLJSON, function(respuesta, estado) {
         if (estado === "success") {
@@ -34,6 +37,8 @@ function loadCards(misProductos) {
                                     </div>
                                 </div>
                             </div>`)
+    productosExperiencias = misProductos.filter(producto => producto.category === "Experiencias");
+    productosPostres = misProductos.filter(producto => producto.category === "Postres");
     }
 }
 function SumarCarrito(i) {
@@ -43,19 +48,20 @@ function SumarCarrito(i) {
         cantidad: parseInt($(`#QuantityProd${i}`).val()),
         precio: parseInt($(`#precio${i}`).text().replace('$', '')) * parseInt($(`#QuantityProd${i}`).val())
     }
-    
-    $("#dropdownCart").prepend(`<li>
+
+    // lo llevo al carrito
+    $("#dropdownCart").prepend(`<li id="item${itemAgregado.id}">
                                 <h4>${itemAgregado.nombre}</h4>
                                 <div class="flexP">
                                 <p class="pDropdown">${itemAgregado.cantidad} x <b>$${itemAgregado.precio}</b></p>
-                                <img class="dropdownBin" src="../media/icons/bin.svg" alt="Eliminar items" style="cursor: pointer;"/></div>
-                                </li>`)
+                                </div>
+                                </li>`);
+                                // <img onclick="eliminarItemCarrito()" class="dropdownBin" src="../media/icons/bin.svg" alt="Eliminar items" style="cursor: pointer;"/>
     MiCarrito.push(itemAgregado);
     guardarLocal("listaCarrito", JSON.stringify(MiCarrito));
-
 }
 
-// funcionamiento carrito
+// visualización menú y carrito
 $("#iconCart").on("click", () => {
     $("#dropdownCart").toggle();
 })
@@ -63,6 +69,103 @@ $(".btnPrimary").on("click", () => {
     $("#visualiceMenu").slideToggle("slow");
 })
 
+// filtrar por categoría
+$("#cardsExperiencias").on("click", () => {
+    $("#menuCards").empty();
+    for(let i = 0; i < productosExperiencias.length; i++) {
+        const producto = productosExperiencias[i];
+        $("#menuCards").prepend(`<div class="eachCard">
+                                <div class="cardsImg"><img src="../media/photos/${producto.id}.png" alt="${producto.name}"/></div>
+                                <div class="cardsInfo">
+                                    <h3 id="nombre${i}">${producto.name}</h3>
+                                    <p>${producto.description}</p>
+                                    <div class="cardsBuy">
+                                        <div class="buyingPrice"><p id="precio${i}">$${producto.price}</p></div>
+                                        <div class="buyingAction">
+                                            <input value="1" type="number" id="QuantityProd${i}" name="cuantosProductos" min="1" max="${producto.stock}"/>
+                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito" style="cursor: pointer;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+    }
+})
+
+$("#cardsPostres").on("click", () => {
+    $("#menuCards").empty();
+    for(let i = 0; i < productosPostres.length ; i++) {
+        const producto = productosPostres[i];
+        $("#menuCards").prepend(`<div class="eachCard">
+                                <div class="cardsImg"><img src="../media/photos/${producto.id}.png" alt="${producto.name}"/></div>
+                                <div class="cardsInfo">
+                                    <h3 id="nombre${i}">${producto.name}</h3>
+                                    <p>${producto.description}</p>
+                                    <div class="cardsBuy">
+                                        <div class="buyingPrice"><p id="precio${i}">$${producto.price}</p></div>
+                                        <div class="buyingAction">
+                                            <input value="1" type="number" id="QuantityProd${i}" name="cuantosProductos" min="1" max="${producto.stock}"/>
+                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito" style="cursor: pointer;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+    }
+})
+$("#cardsTodas").on("click", () => {
+    $("#menuCards").empty();
+    for(let i = 0; i < productosPostres.length; i++) {
+        const producto = productosPostres[i];
+        $("#menuCards").prepend(`<div class="eachCard">
+                                <div class="cardsImg"><img src="../media/photos/${producto.id}.png" alt="${producto.name}"/></div>
+                                <div class="cardsInfo">
+                                    <h3 id="nombre${i}">${producto.name}</h3>
+                                    <p>${producto.description}</p>
+                                    <div class="cardsBuy">
+                                        <div class="buyingPrice"><p id="precio${i}">$${producto.price}</p></div>
+                                        <div class="buyingAction">
+                                            <input value="1" type="number" id="QuantityProd${i}" name="cuantosProductos" min="1" max="${producto.stock}"/>
+                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito" style="cursor: pointer;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+    }
+    for(let i = 0; i < productosExperiencias.length; i++) {
+        const producto = productosExperiencias[i];
+        $("#menuCards").prepend(`<div class="eachCard">
+                                <div class="cardsImg"><img src="../media/photos/${producto.id}.png" alt="${producto.name}"/></div>
+                                <div class="cardsInfo">
+                                    <h3 id="nombre${i}">${producto.name}</h3>
+                                    <p>${producto.description}</p>
+                                    <div class="cardsBuy">
+                                        <div class="buyingPrice"><p id="precio${i}">$${producto.price}</p></div>
+                                        <div class="buyingAction">
+                                            <input value="1" type="number" id="QuantityProd${i}" name="cuantosProductos" min="1" max="${producto.stock}"/>
+                                            <img id="agregarCarrito${i}" onclick="SumarCarrito(${i})" src="../media/icons/cart.svg" alt="Añadir al carrito" style="cursor: pointer;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+    }
+})
+
+// shopping
+$("#cartPage").on("click", () => {
+    $("#hidingStuff").slideUp("3000", () => {
+        $("#shopCarrito").slideDown("7000");
+    });
+})
+$("#confirmarCompra").on("click", () => {
+    $("#hideCart").slideUp("fast", () => {
+        $("#formInformation").slideDown("fast", () => {
+            $("#contactForm").slideDown("fast", () => {
+                $("#formInformation").append(`<p class="pInformation">
+                ¡Completá el formulario y nos comunicaremos a la brevedad!</p>`);
+            });
+        });
+    });
+
+    });
 
 
 
